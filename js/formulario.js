@@ -1,5 +1,5 @@
 const number = /^[0-9]{5,10}/;
-const text = /^[a-zA-ZñÑá-úÁ-Ú0-9]{5,20}/;
+const text = /^[a-zA-ZñÑá-úÁ-Ú0-9]{5,20}/
 const email = /\w+@misena\.edu\.co/;
 const passwordd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()\-_=+{};:,<.>]).{4,}$/
 
@@ -22,7 +22,7 @@ let edad
 
 // DOCUMENTO DE IDENTIDAD
 form.Nodoc.addEventListener('input', e => {
-  e.preventDefault();
+  e.preventDefault()
 
   console.log("se está escribiendo");
   if (number.test(e.target.value)) {
@@ -69,11 +69,11 @@ form.Apl.addEventListener('input', e => {
     f3.style.setProperty("visibility","visible")
     f3.style.setProperty("opacity","1")
   }
-});
+})
 
 // FECHA DE NACIMIENTO
 form.FeNa.addEventListener('input', e => {
-  e.preventDefault();
+  e.preventDefault()
 
   console.log("se está escribiendo");
   const fechaIngresada = new Date(e.target.value);
@@ -93,7 +93,7 @@ form.FeNa.addEventListener('input', e => {
 
 // CORREO ELECTRONICO
 form.Coel.addEventListener('input', e => {
-  e.preventDefault();
+  e.preventDefault()
 
   console.log("se está escribiendo");
   if (email.test(e.target.value)) {
@@ -110,7 +110,7 @@ form.Coel.addEventListener('input', e => {
 
 // CONTRASEÑA
 form.Pass.addEventListener('input', e => {
-  e.preventDefault();
+  e.preventDefault()
 
   console.log("se está escribiendo");
   if (passwordd.test(e.target.value)) {
@@ -140,10 +140,10 @@ form.CoPass.addEventListener('input', e => {
     f7.style.setProperty("visibility","visible")
     f7.style.setProperty("opacity","1")
   }
-});
+})
 
 form.addEventListener("submit", e => {
-  e.preventDefault();
+  e.preventDefault()
   let flag = true;
 
   if (form.Nodoc.value == null || form.Nodoc.value == 0 || !number.test(form.Nodoc.value)) {
@@ -170,28 +170,28 @@ form.addEventListener("submit", e => {
 
 
   if (form.FeNa.value == null || form.FeNa.value == 0 || edad < 18) {
-    alert("Debe ingresar una fecha de nacimiento válida (debes ser mayor de 18 años para registrarte)");
+    alert("Debe ingresar una fecha de nacimiento válida (debes ser mayor de 18 años para registrarte)")
     form.FeNa.focus();
     form.FeNa.setAttribute("class", "error");
     flag = false;
   }
 
   if (form.Coel.value == null || form.Coel.value == 0 || !email.test(form.Coel.value)) {
-    alert("Debe ingresar un correo válido (solo se aceptan correos @misena.edu.co)");
+    alert("Debe ingresar un correo válido (solo se aceptan correos @misena.edu.co)")
     form.Coel.focus();
     form.Coel.setAttribute("class", "error");
     flag = false;
   }
 
   if (form.Pass.value == null || form.Pass.value == 0 || !passwordd.test(form.Pass.value)) {
-    alert("Debe ingresar una contraseña válida (mínimo una letra mayúscula, un número, una letra minúscula y un caracter especial, mínimo 10 caracteres)");
+    alert("Debe ingresar una contraseña válida (mínimo una letra mayúscula, un número, una letra minúscula y un caracter especial, mínimo 10 caracteres)")
     form.Pass.focus();
     form.Pass.setAttribute("class", "error");
     flag = false;
   }
 
   if (form.CoPass.value == null || form.CoPass.value == 0 || !passwordd.test(form.CoPass.value) || form.CoPass.value != form.Pass.value) {
-    alert("Debe ingresar una contraseña válida y que coincida con la contraseña ingresada anteriormente");
+    alert("Debe ingresar una contraseña válida y que coincida con la contraseña ingresada anteriormente")
     form.CoPass.focus();
     form.CoPass.setAttribute("class", "error");
     flag = false;
@@ -213,8 +213,8 @@ let cerModal = document.querySelector(".cerrarModal");
 
 btnModal.addEventListener("click", () => {
   venModal.style.display = "block";
-});
+})
 
 cerModal.addEventListener("click", () => {
   venModal.style.display = "none";
-});
+})
