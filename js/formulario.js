@@ -1,6 +1,6 @@
-const number = /^[0-9]{5,10}/;
+const number = /^[0-9]{5,10}/
 const text = /^[a-zA-ZñÑá-úÁ-Ú0-9]{5,20}/
-const email = /\w+@misena\.edu\.co/;
+const email = /\w+@misena\.edu\.co/
 const passwordd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()\-_=+{};:,<.>]).{4,}$/
 
 const form = document.getElementById("frmvalidacion")
@@ -128,7 +128,7 @@ form.Pass.addEventListener('input', e => {
 // CONFIRMAR CONTRASEÑA
 form.CoPass.addEventListener('input', e => {
   e.preventDefault();
-  console.log("se está escribiendo sobre el input");
+  console.log("se está escribiendo sobre el input")
 
   if (passwordd.test(e.target.value)) {
     form.CoPass.setAttribute("class","success")
@@ -144,72 +144,72 @@ form.CoPass.addEventListener('input', e => {
 
 form.addEventListener("submit", e => {
   e.preventDefault()
-  let flag = true;
+  let flag = true
 
   if (form.Nodoc.value == null || form.Nodoc.value == 0 || !number.test(form.Nodoc.value)) {
-    alert("Debe ingresar un número de documento válido");
-    form.Nodoc.focus();
-    form.Nodoc.setAttribute("class", "error");
-    flag = false;
+    alert("Debe ingresar un número de documento válido")
+    form.Nodoc.focus()
+    form.Nodoc.setAttribute("class", "error")
+    flag = false
   }
 
   if (form.Nom.value == null || form.Nom.value == 0 || !text.test(form.Nom.value)) {
-    alert("Debe ingresar un nombre válido");
-    form.Nom.focus();
-    form.Nom.setAttribute("class", "error");
-    flag = false;
+    alert("Debe ingresar un nombre válido")
+    form.Nom.focus()
+    form.Nom.setAttribute("class", "error")
+    flag = false
   }
 
   if (form.Apl.value == null || form.Apl.value == 0 || !text.test(form.Apl.value)) {
-    alert("Debe ingresar un apellido válido");
-    form.Apl.focus();
-    form.Apl.setAttribute("class", "error");
-    flag = false;
+    alert("Debe ingresar un apellido válido")
+    form.Apl.focus()
+    form.Apl.setAttribute("class", "error")
+    flag = false
   }
 
 
 
   if (form.FeNa.value == null || form.FeNa.value == 0 || edad < 18) {
     alert("Debe ingresar una fecha de nacimiento válida (debes ser mayor de 18 años para registrarte)")
-    form.FeNa.focus();
-    form.FeNa.setAttribute("class", "error");
-    flag = false;
+    form.FeNa.focus()
+    form.FeNa.setAttribute("class", "error")
+    flag = false
   }
 
   if (form.Coel.value == null || form.Coel.value == 0 || !email.test(form.Coel.value)) {
     alert("Debe ingresar un correo válido (solo se aceptan correos @misena.edu.co)")
-    form.Coel.focus();
-    form.Coel.setAttribute("class", "error");
-    flag = false;
+    form.Coel.focus()
+    form.Coel.setAttribute("class", "error")
+    flag = false
   }
 
   if (form.Pass.value == null || form.Pass.value == 0 || !passwordd.test(form.Pass.value)) {
     alert("Debe ingresar una contraseña válida (mínimo una letra mayúscula, un número, una letra minúscula y un caracter especial, mínimo 10 caracteres)")
-    form.Pass.focus();
-    form.Pass.setAttribute("class", "error");
-    flag = false;
+    form.Pass.focus()
+    form.Pass.setAttribute("class", "error")
+    flag = false
   }
 
   if (form.CoPass.value == null || form.CoPass.value == 0 || !passwordd.test(form.CoPass.value) || form.CoPass.value != form.Pass.value) {
     alert("Debe ingresar una contraseña válida y que coincida con la contraseña ingresada anteriormente")
-    form.CoPass.focus();
-    form.CoPass.setAttribute("class", "error");
-    flag = false;
+    form.CoPass.focus()
+    form.CoPass.setAttribute("class", "error")
+    flag = false
   }
 
   if (!document.getElementById('Te').checked) {
-    alert("No has aceptado los términos y condiciones");
-    flag = false;
+    alert("No has aceptado los términos y condiciones")
+    flag = false
   }
 
   if (flag) {
-    form.submit();
+    form.submit()
   }
 })
 
-let btnModal = document.getElementById("abrirModal");
-let venModal = document.getElementById("ventanaModal");
-let cerModal = document.querySelector(".cerrarModal");
+let btnModal = document.getElementById("abrirModal")
+let venModal = document.getElementById("ventanaModal")
+let cerModal = document.querySelector(".cerrarModal")
 
 btnModal.addEventListener("click", () => {
   venModal.style.display = "block";
