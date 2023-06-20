@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RETO 7</title>
+    <link rel="stylesheet" href="css/style4.css">
+</head>
+<body>
+    <form action="#" id="frmvalidacion" name="frmvalidacion" novalidate>
+        <h1>FORMULARIO REGISTRO</h1>
+        <label for="Tidoc">Tipo Documento</label>
+        <select name="Tidoc" id="Tidoc">
+            <option value="1">Cedula de Ciudadania</option>
+            <option value="2">Tarjeta de Identidad</option>
+            <option value="3">Pasaporte de Extranjeria</option>
+        </select>
+        <div id="Nodoc">
+        <label for="Nodoc">No. Documento</label>
+        <input type="number" id="Nodoc" name="Nodoc" placeholder="Numero Documento" class="">
+        <div class="feedback"></div>
+        </div>
+        <div id="Nom">
+        <label for="Nom">Nombre</label>
+        <input type="text" id="Nom" name="Nom" placeholder="Nombre">
+        <div class="feedback"></div>
+        </div>
+        <div id="Apl">
+        <label for="Apl">Apellido</label>
+        <input type="text" id="Apl" name="Apl" placeholder="Apellido">
+        <div class="feedback"></div>
+        </div>
+        <div id="FeNa">
+        <label for="FeNa">Fecha Nacimiento</label>
+        <input type="date" id="FeNa" name="FeNa">
+        <div class="feedback"></div>
+        </div>
+        <div id="Coel">
+        <label for="Coel">Correo electrónico</label>
+        <input type="email" id="Coel" name="Coel" placeholder="Correo electrónico">
+        <div class="feedback"></div>
+        </div>
+        <div id="Pass">
+        <label for="Pass">Password</label>
+        <input type="password" id="Pass" name="Pass" placeholder="Contraseña">
+        <div class="feedback"></div>
+        </div>
+        <div id="CoPass">
+        <label for="CoPass">Comprobar password</label>
+        <input type="password" id="CoPass" name="CoPass" placeholder="Confirmacion contraseña">
+        <div class="feedback"></div>
+        </div>
+        <label>Aceptar Términos de uso</label>
+        <input type="checkbox" name="Te" id="Te">
+        <button type="submit" >Registrarse</button>
+        <button type="button" id="abrirModal">Ver Términos de uso</button>
+    </form>
+    <div id="ventanaModal" class="modal">
+        <div id="contenidoModal" >
+            <span class="cerrarModal">X</span>
+            <h1>TÉRMINOS DE USO</h1>
+                <p>Podemos terminar o suspender de manera permanente o temporal tu acceso al servicio sin previo aviso y responsabilidad por cualquier razón, incluso si a nuestra sola determinación tu violas alguna disposición de estos Términos o cualquier ley o regulación aplicable. Puedes descontinuar el uso y solicitar cancelar tu cuenta y / o cualquier servicio en cualquier momento. Sin perjuicio de lo contrario en lo que antecede, con respecto a las suscripciones renovadas automáticamente a los servicios pagados, dichas suscripciones se suspenderán solo al vencimiento del período correspondiente por el que ya has realizado el pago.</p>
+        </div>
+    </div>
+    <script src="js/formulario.js"></script>
+
+</body>
+</html>
